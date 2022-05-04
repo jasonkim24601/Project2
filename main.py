@@ -7,30 +7,34 @@ def main():
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    # output_file = open("output.txt", "w")
-    # # soup_string = str(soup)
-    # # output_file.write(soup_string)
-    # # output_file.close()
-    #
-    # # for link in soup.get_text():
-    # #     soup_link = str(link)
-    # #     print(soup_link)
-    # #     output_file.write(soup_link)
-    #
-    # with open(output_file, "output.txt", encoding="utf-8") as f:
-    #     f.write(soup)
-
+    # raw dump with no formatting
     with open("rawdump.txt", "w", encoding="utf-8") as file:
         file.write(str(page.text))
-
+    # raw dump but with soup
     with open("soupdump.txt", "w", encoding="utf-8") as file:
         file.write(str(soup))
-
+    # raw text dump
     with open("souptextdump.txt", "w", encoding="utf-8") as file:
-        file.write(str(soup.get_text()))
+        for line in str(soup.get_text()):
+            line.strip()
+            file.write(line)
 
 
-    print(soup.get_text())
+
+        # file.write(str(soup.get_text()))
+    # cleaning up
+
+    file = open("souptextdump.txt", 'r', encoding="utf-8")
+    lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        if line == '' or line == "/n":
+            pass
+        else:
+            print(line)
+    file.close()
+
+
 
 
 # Press the green button in the gutter to run the script.
