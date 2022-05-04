@@ -5,13 +5,11 @@ import pandas as pd
 def CSV_to_txt():
 
     csvfile = pd.read_csv('cards.csv')
-
     nameColumn = list(csvfile['name'])
-
     e = '\n'.join(map(str, nameColumn))
-
-    print(a)
     print(e)
+    with open("cardnames.txt", "w", encoding="utf-8") as file:
+        file.write(e)
 
 
 if __name__ == '__main__':

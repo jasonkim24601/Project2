@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import CSV_To_txt
 
 
 def main():
@@ -20,11 +19,6 @@ def main():
             line.strip()
             file.write(line)
 
-    file.close()
-
-
 
 if __name__ == '__main__':
     main()
-
-
