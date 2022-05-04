@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import CSV_To_txt
 
 
 def main():
@@ -19,26 +20,11 @@ def main():
             line.strip()
             file.write(line)
 
-
-
-        # file.write(str(soup.get_text()))
-    # cleaning up
-
-    file = open("souptextdump.txt", 'r', encoding="utf-8")
-    lines = file.readlines()
-    for line in lines:
-        line = line.strip()
-        if line == '' or line == "/n":
-            pass
-        else:
-            print(line)
     file.close()
 
 
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
