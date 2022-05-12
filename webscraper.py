@@ -8,13 +8,18 @@ def webscaper():
     soup = BeautifulSoup(page.content, "html.parser")
 
     # raw dump with no formatting
-    with open("rawdump.txt", "w", encoding="utf-8") as file:
-        file.write(str(page.text))
+    # with open("rawdump.txt", "w", encoding="utf-8") as file:
+    #     file.write(str(page.text))
+
+
     # raw dump but with soup
-    with open("soupdump.txt", "w", encoding="utf-8") as file:
-        file.write(str(soup))
-    # raw text dump
-    with open("souptextdump.txt", "w", encoding="utf-8") as file:
+    # with open("soupdump.txt", "w", encoding="utf-8") as file:
+    #     file.write(str(soup))
+
+
+
+    # raw text dump done correctly
+    with open("souptextdump.csv", "w", encoding="utf-8") as file:
         for line in str(soup.get_text()):
             line.strip()
             file.write(line)

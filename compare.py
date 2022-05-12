@@ -1,6 +1,6 @@
 def compare():
-    card_filename = 'cardnames.txt'
-    scraped_filename = 'souptextdump.txt'
+    card_filename = 'cardnames.csv'
+    scraped_filename = 'souptextdump.csv'
 
     with open(card_filename, 'r') as f:
         hosts = f.readlines()
