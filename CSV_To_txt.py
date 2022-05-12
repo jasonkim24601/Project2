@@ -9,8 +9,6 @@ def CSV_to_txt():
 
     print(e)
 
-
-
     with open("cardnames.csv", "w", encoding="utf-8") as file:
         file.write(e)
 
