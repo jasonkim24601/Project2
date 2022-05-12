@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def main():
+def webscaper():
     URL = "https://magic.wizards.com/en/articles/archive/mtgo-standings/modern-preliminary-2022-05-03"
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -21,4 +21,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    webscaper()
