@@ -29,13 +29,5 @@ def compare():
                     csvwriter.writerow([scrape_line])
 
 
-
-                    # This works but isn't escaping commas
-                    # f.write(scrape_line)
-
-
-
-
-
 if __name__ == '__main__':
     compare()
