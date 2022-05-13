@@ -11,13 +11,13 @@ def webscaper(URL) -> None:
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    # raw dump with no formatting
-    with open("rawdump.txt", "w", encoding="utf-8") as file:
-        file.write(str(page.text))
-
-    # raw dump but with soup
-    with open("soupdump.txt", "w", encoding="utf-8") as file:
-        file.write(str(soup))
+    # # raw dump with no formatting
+    # with open("rawdump.txt", "w", encoding="utf-8") as file:
+    #     file.write(str(page.text))
+    #
+    # # raw dump but with soup
+    # with open("soupdump.txt", "w", encoding="utf-8") as file:
+    #     file.write(str(soup))
 
     # raw text dump done correctly
     with open("souptextdump.csv", "w", encoding="utf-8") as file:
