@@ -4,8 +4,6 @@ from url_regex import *
 from csv_regex import *
 from webscraper import *
 from write import *
-import re
-
 
 class Controller(QMainWindow, Ui_MainWindow):
     def __init__(self, *args, **kwargs):
@@ -19,7 +17,12 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.pButton_submit.clicked.connect(lambda: self.submit())
 
     def submit(self) -> None:
+        # Hide everything again just in case user decides to run the program again without closing
+        self.label_error.hide()
+        self.label_done.hide()
+        self.label_done2.hide()
         # Flag to end program as long as everything is okay.
+        # If there's any number of error it will change to 0 and flag an error and prompt the user to fix errors.
         end_okay = 1
         # Variables to grab user input (if applicable)
         user_URL = None
@@ -65,15 +68,14 @@ class Controller(QMainWindow, Ui_MainWindow):
                     self.label_error.setText("Output .csv file cannot be named rawOutput.csv.")
                     self.label_error.show()
 
-
-
-
         # If everything goes through successfully...
         if end_okay == 1:
+            # clear the error message popup
+            self.label_error.hide()
             # Grab input from the URL line
             user_URL = self.lineEdit_URL.text()
             # Grab input from the output file line
-            # If empty write to output.csv instead.
+            # If empty write to default.csv instead as stated on the GUI
             if self.lineEdit_OUTPUT.text():
                 user_csv = self.lineEdit_OUTPUT.text()
             else:
@@ -81,9 +83,25 @@ class Controller(QMainWindow, Ui_MainWindow):
             # scrape website provided by user and save to souptextdump.csv
             webscaper(user_URL)
             # take that information and compare it to cardnames.txt and write to appropriate output .csv file.
+            # this is done in write.py
+            # if the output file is open it will throw a Permission Error, this catches it
+            try:
+                write(user_csv)
+            except PermissionError:
+                end_okay = 0
 
+            if end_okay == 1:
+                # Create done message with destination of output displayed
+                doneText = "Done, results saved to "
+                doneText += user_csv
+                self.label_done.setText(doneText)
 
+                self.label_done2.setText("Enter another website/output csv file or close.")
 
-            self.label_error.hide()
-            self.label_done.show()
-            self.label_done2.show()
+                self.label_done.show()
+                self.label_done2.show()
+            # If output file is open, do this
+            else:
+                self.label_error.setText("Output file is open, please close and try again.")
+                self.label_error.show()
+
