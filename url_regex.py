@@ -5,9 +5,9 @@ def url_regex(url):
     x = re.search("(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])", url)
 
     if x != None:
-        return True
+        return 1
     if x == None:
-        return False
+        return 0
 
 
 if __name__ == '__main__':
