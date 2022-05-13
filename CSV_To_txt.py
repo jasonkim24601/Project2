@@ -2,6 +2,9 @@ import pandas as pd
 
 
 def CSV_to_txt() -> None:
+    """
+    Converts the cardnames.csv file to a csv file just containing the column containing card names.
+    """
     csvfile = pd.read_csv('cards.csv')
     nameColumn = list(csvfile['name'])
     e = '\n'.join(map(str, nameColumn))
