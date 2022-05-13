@@ -18,6 +18,7 @@ def write(outputFile) -> None:
         scraped_cards = f.readlines()
 
     # It first will write to rawOutput.csv
+    # I added a fail case to the user input so that they cannot designate rawOutput.csv as their final output file.
     # It will then rewrite to the desired output file, with all the white space removed.
     with open("rawOutput.csv", 'w') as f:
         csvwriter = csv.writer(f)
@@ -38,9 +39,11 @@ def write(outputFile) -> None:
             for row in csv.reader(in_file):
                 if row:
                     writer.writerow(row)
+    # After that, delete rawOutput.csv
+    os.remove("rawOutput.csv")
 
 
 
 
 if __name__ == '__main__':
-    write("default.csv")
+    write("sneed.csv")
