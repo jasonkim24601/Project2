@@ -3,7 +3,7 @@ import pandas as pd
 
 def CSV_to_txt() -> None:
     """
-    Converts the cardnames.csv file to a csv file just containing the column containing card names.
+    Converts the cardnames.csv file to a csv file named cardnames.csv just containing the column containing card names.
     """
     csvfile = pd.read_csv('cards.csv')
     nameColumn = list(csvfile['name'])
