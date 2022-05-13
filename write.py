@@ -1,7 +1,7 @@
 import csv
 
 
-def compare(scrapetext) -> None:
+def write(scrapetext) -> None:
     """
     Method to see what parts of the scraped data are actually cards.
     Once the cards are pulled, append them to tournament_cards.csv
