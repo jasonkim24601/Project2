@@ -85,12 +85,19 @@ class Controller(QMainWindow, Ui_MainWindow):
             # take that information and compare it to cardnames.txt and write to appropriate output .csv file.
             # this is done in write.py
             # if the output file is open it will throw a Permission Error, this catches it
+            # OSError occurs when the provided filename.csv file has invalid characters
+            # and the program can't save a file with that name (Think something like ???.csv)
             try:
                 write(user_csv)
             except PermissionError:
                 end_okay = 0
+            except OSError:
+                end_okay = 2
 
-            if end_okay == 1:
+            if end_okay == 2:
+                self.label_error.setText("Invalid output file name.")
+                self.label_error.show()
+            elif end_okay == 1:
                 # Create done message with destination of output displayed
                 doneText = "Done, results saved to "
                 doneText += user_csv
