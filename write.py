@@ -41,7 +41,9 @@ def write(outputFile) -> None:
                 if row:
                     writer.writerow(row)
     # After that, delete rawOutput.csv
+    # And delete souptextdump.csv as that isn't needed anymore either.
     os.remove("rawOutput.csv")
+    os.remove("souptextdump.csv")
 
 
 if __name__ == '__main__':
