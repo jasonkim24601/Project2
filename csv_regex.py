@@ -10,6 +10,5 @@ def csv_regex(csv):
         return 0
 
 
-
 if __name__ == '__main__':
     csv_regex("sneed.csv")
