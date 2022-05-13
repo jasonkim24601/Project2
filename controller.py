@@ -60,6 +60,10 @@ class Controller(QMainWindow, Ui_MainWindow):
                     end_okay = 0
                     self.label_error.setText("Please enter your output as filename.csv or leave blank.")
                     self.label_error.show()
+                if csv == "rawOutput.csv":
+                    end_okay = 0
+                    self.label_error.setText("Output .csv file cannot be named rawOutput.csv.")
+                    self.label_error.show()
 
 
 
@@ -74,7 +78,9 @@ class Controller(QMainWindow, Ui_MainWindow):
                 user_csv = self.lineEdit_OUTPUT.text()
             else:
                 user_csv = "default.csv"
-
+            # scrape website provided by user and save to souptextdump.csv
+            webscaper(user_URL)
+            # take that information and compare it to cardnames.txt and write to appropriate output .csv file.
 
 
 
