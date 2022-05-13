@@ -1,6 +1,6 @@
 from webscraper import *
 from CSV_To_txt import *
-from compare import *
+from write import *
 from controller import *
 
 # Original idea: https://www.youtube.com/watch?v=RvCBzhhydNk (Webscraping)

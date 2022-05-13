@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Output File"))
         self.label_url_info.setText(_translate("MainWindow", "Please input a Magic: The Gathering Tournament decklists URL. "))
         self.label_output_info1.setText(_translate("MainWindow", "Please designate the Output csv file to append."))
-        self.label_output_info2.setText(_translate("MainWindow", "If no output is set, results will be appended to default.csv"))
+        self.label_output_info2.setText(_translate("MainWindow", "If no output is set, results will be wrote to default.csv"))
         self.label_error.setText(_translate("MainWindow", "ERROR MESSAGE YOU SHOULDN\'T BE SEEING THIS"))
         self.label_done.setText(_translate("MainWindow", "Done, results saved to ..."))
         self.pButton_submit.setText(_translate("MainWindow", "Next"))

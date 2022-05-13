@@ -99,7 +99,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>If no output is set, results will be appended to default.csv</string>
+     <string>If no output is set, results will be wrote to default.csv</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_error">
