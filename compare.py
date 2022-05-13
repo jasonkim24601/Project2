@@ -4,7 +4,7 @@ import csv
 def compare(scrapetext) -> None:
     """
     Method to see what parts of the scraped data are actually cards.
-    Once the cards are pulled, save them to tournament_cards.csv
+    Once the cards are pulled, append them to tournament_cards.csv
     :param scrapetext: CSV file containing the names of the scraped data from the Wizard's Website.
     """
     card_filename = 'cardnames.csv'
