@@ -1,7 +1,12 @@
 import csv
 
 
-def compare():
+def compare() -> None:
+    """
+    Method to see what parts of the scraped data are actually cards.
+    Once the cards are pulled, save them to tournament_cards.csv
+    :return:
+    """
     card_filename = 'cardnames.csv'
     scraped_filename = 'souptextdump.csv'
 
@@ -11,11 +16,9 @@ def compare():
     with open(scraped_filename, 'r', encoding="utf-8") as f:
         scraped_cards = f.readlines()
 
-    # list to store matches and to be used for writing
-    write_list = []
-
     # open output file here
-    with open("tournament_cards.csv", 'w', newline='\n') as f:
+    with open("tournament_cards.csv", 'a', newline='\n') as f:
+        csvwriter = csv.writer(f)
 
         # open raw scrape data
         for scrape_line in scraped_cards:
@@ -25,7 +28,6 @@ def compare():
                 if card_line == scrape_line:
                     print(scrape_line)
 
-                    csvwriter = csv.writer(f)
                     csvwriter.writerow([scrape_line])
 
 
