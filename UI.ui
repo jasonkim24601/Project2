@@ -30,7 +30,7 @@
      <string>URL</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lineEdit_URL">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -53,7 +53,7 @@
      <string>Output File</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="lineEdit_OUTPUT">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -102,7 +102,20 @@
      <string>If no output is set, results will be appended to default.csv</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="label_error">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ERROR MESSAGE YOU SHOULDN'T BE SEEING THIS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_done">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -112,27 +125,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>ERROR MESSAGE YOU SHOULDN'T BE SEEING THIS</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>190</y>
-      <width>301</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
      <string>Done, results saved to ...</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pButton_submit">
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>230</y>
+      <y>220</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -141,11 +141,11 @@
      <string>Next</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="label_done2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>190</y>
       <width>301</width>
       <height>16</height>
      </rect>
