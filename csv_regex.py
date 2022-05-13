@@ -2,6 +2,11 @@ import re
 
 
 def csv_regex(csv):
+    """
+    Method to check if input parameter is in the filename.csv format
+    :param csv: User input to run regex against
+    :return: 1 if it is written in proper .csv format, 0 otherwise
+    """
     x = re.search("\.csv$", csv)
 
     if x != None:
