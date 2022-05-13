@@ -1,6 +1,7 @@
 import csv
 import os
 
+
 def write(outputFile) -> None:
     """
     Method to see what parts of the scraped data are actually cards.
@@ -41,8 +42,6 @@ def write(outputFile) -> None:
                     writer.writerow(row)
     # After that, delete rawOutput.csv
     os.remove("rawOutput.csv")
-
-
 
 
 if __name__ == '__main__':
